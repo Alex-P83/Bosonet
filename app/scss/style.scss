@@ -1,4 +1,16 @@
 @import "vars";
 @import "libs";
 @import "fonts";
+@import "footer";
+@import "button";
+@import "form";
 @import "pages/main";
+
+body {
+    position: relative;
+    font-family: "Muli", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background: $white;
+    color: $black;
+}
