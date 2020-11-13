@@ -176,7 +176,8 @@
         z-index: 2;
         padding-top: 185px;
         padding-bottom: 135px;
-        pointer-events: all;        
+        pointer-events: all;
+        transition: 0.5s;        
         &:after{
             position: absolute;
             top:0;
@@ -187,6 +188,9 @@
             background:$green ;
             z-index: -1;
 
+        }
+        &.active{
+            max-width: 213px;
         }
     }
     .inner_block{
