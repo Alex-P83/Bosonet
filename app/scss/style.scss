@@ -2,8 +2,11 @@
 @import "libs";
 @import "fonts";
 @import "footer";
+@import "header";
 @import "button";
 @import "form";
+@import "typography";
+@import "slider";
 @import "pages/main";
 
 body {
@@ -11,6 +14,11 @@ body {
     font-family: "Muli", sans-serif;
     font-size: 16px;
     font-weight: 400;
-    background: $white;
+    background: $white url('../img/grid.svg');
     color: $black;
+}
+@media (min-width: 1300px){
+    .container{
+       max-width: 1660px; 
+    }
 }

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="209.652" height="48.617" viewBox="0 0 209.652 48.617">
+  <g id="Сгруппировать_13330" data-name="Сгруппировать 13330" transform="translate(0)">
+    <text id="KANZ_REMIT" data-name="KANZ REMIT" transform="translate(51.652)" fill="#fff" font-size="25.5" font-family="SegoeUI, Segoe UI" letter-spacing="0.02em"><tspan x="0" y="28">KANZ REMIT</tspan></text>
+    <text id="POWERING_PAYMENTS" data-name="POWERING PAYMENTS" transform="translate(52.453 27.617)" fill="#fff" font-size="13.5" font-family="SegoeUI, Segoe UI" letter-spacing="0.064em"><tspan x="0" y="15">POWERING </tspan></text>
+    <g id="Сгруппировать_3474" data-name="Сгруппировать 3474" transform="translate(0 9.202)">
+      <path id="Контур_227" data-name="Контур 227" d="M2568.218,544.554l3.309-6.1V529H2564.9v31.116h6.624v-9.463Z" transform="translate(-2564.902 -528.996)" fill="#fff"/>
+      <path id="Path_207" data-name="Path 207" d="M2586.965,529h-7.112l-1.994,3.673-6.451,11.884,8.445,15.557h7.112l-8.434-15.551Z" transform="translate(-2565.786 -528.997)" fill="#fff"/>
+      <path id="Path_180" data-name="Path 180" d="M2593.309,539.652h-7.122l-3.436,6.331,8.445,15.557h7.112l-8.433-15.551Z" transform="translate(-2567.329 -530.445)" fill="#fff"/>
+      <path id="Path_179" data-name="Path 179" d="M2604.949,544.647a6.286,6.286,0,0,0,4.958-6.536c0-6.361-5.058-9.115-13.824-9.115h-4.276l-3.553,6.216h8.882c2.405,0,4.157,1.547,4.157,3.3,0,2-1.6,3.257-4.157,3.257h-3.483l-1.511,2.788,1.852,3.414h3.144v.008c2.255,0,3.306,1.4,4.307,3.206,1.954,3.656,3.456,9.115,12.821,9.115l1.6-6.911C2608.706,553.387,2609.857,545.9,2604.949,544.647Z" transform="translate(-2568.077 -528.997)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
