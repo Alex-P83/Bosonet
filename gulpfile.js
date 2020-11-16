@@ -51,7 +51,8 @@ gulp.task('js', function(){
     'node_modules/bootstrap/dist/js/bootstrap.js',
     'node_modules/slick-carousel/slick/slick.js',
     'node_modules/owl.carousel/dist/owl.carousel.js',
-    'node_modules/simplebar/dist/simplebar.js'
+    'node_modules/simplebar/dist/simplebar.js',
+    'node_modules/owl.carousel2.thumbs/dist/owl.carousel2.thumbs.js'
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
