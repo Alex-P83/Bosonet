@@ -45,3 +45,32 @@ header{
         }
     }
 }
+
+@include respond(s-screen){
+    header{
+        background: $white;
+        padding: 15px 0;
+        @include box_shadow(1);
+        .menu-wrapper{
+            display: none;
+            .menu{
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@include respond(es-screen){
+    header{
+        z-index: 3;
+        .menu-wrapper{
+            .menu{
+                flex-direction: column;
+                li{
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+}

@@ -1,12 +1,15 @@
 @mixin box_shadow ($level) {
 
     @if $level == 1 {
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     } 
 
 }
 
 @mixin respond($breakpoint) {
+    @if $breakpoint == 2xl-screen {
+        @media only screen and (max-width: 1599.98px) { @content };    //1600
+    }      
     @if $breakpoint == xl-screen {
         @media only screen and (max-width: 1349.98px) { @content };    //1350
     }    

@@ -6,6 +6,7 @@
 @import "header";
 @import "button";
 @import "form";
+@import "menu-btn";
 @import "typography";
 @import "slider";
 @import "pages/main";
@@ -21,5 +22,11 @@ body {
 @media (min-width: 1300px){
     .container{
        max-width: 1660px; 
+    }
+}
+
+@include respond(s-screen){
+    body{
+        background: $white;
     }
 }
