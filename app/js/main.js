@@ -1,6 +1,7 @@
 $(function(){
     // Scrollbar custom 
     new SimpleBar($('#scrollBarElement')[0]);
+
     // Owl carousel
     $('.testimonials_slider').owlCarousel({
         loop:true,
@@ -24,7 +25,7 @@ $(function(){
     $('.project_slider').owlCarousel({
         stagePadding: 50,
         loop:true,
-        margin:10,
+        margin:40,
         nav:false,
         dots:false,
         items:1,
@@ -32,12 +33,10 @@ $(function(){
         thumbsPrerendered: true,
         responsive:{
             0:{
-                items:1
+                items:1,
+              stagePadding:0,  
             },
-            600:{
-                items:1
-            },
-            1000:{
+            1200:{
                 items:1
             }
         }
@@ -45,39 +44,49 @@ $(function(){
     
     let team_carousel = $('.services_02 .team_tiles');
     let team_settings = {
+      stagePadding: 30,
       loop:true,
       margin:10,
-      nav:true,
+      nav:false,
+      thumbs: false,
+      items:2,
       responsive:{
-          0:{
-              items:1
-          },
-          600:{
-              items:3
-          },
-          1000:{
-              items:5
+          576:{
+            stagePadding: 50
           }
       }
-  };
+    };
 
-  if(window.innerWidth < 992){
-      team_carousel.owlCarousel(team_settings);
-  }
+    if(window.innerWidth < 992){
+        team_carousel.owlCarousel(team_settings);
+    }
+
+    let logotype_carousel = $('.who_we_work .logotypes');
+    let logotype_settings = {
+      loop:true,
+      margin:20,
+      nav:false,
+      autoWidth:true,
+      thumbs: false
+    };   
+    
+    if(window.innerWidth < 992){
+        logotype_carousel.owlCarousel(logotype_settings);
+    }    
+
   
   //Resize slider
-  $(window).resize(function (e) {
-    if (window.innerWidth < 768) {
-      if ($(pc__slider).hasClass('slick-initialized')) {
-        $(pc__slider).slick('unslick');
-      }
+  $(window).on('resize',function (e) {
+    if(window.innerWidth > 992){
+      team_carousel.trigger('destroy.owl.carousel');
+      logotype_carousel.trigger('destroy.owl.carousel');
     }
-    else {
-        if(!$(pc__slider).hasClass('slick-initialized')){
-          $(pc__slider).slick(pc__slider__settings);
-      }    
+    else{
+      team_carousel.owlCarousel(team_settings);
+      logotype_carousel.owlCarousel(logotype_settings);
     }
   });
+
   //Click
 
   var widthTitle = document.querySelector('.services_02 .title h6');
@@ -86,7 +95,15 @@ $(function(){
     $('.inner_block').slideToggle();
     $('.services_02_back').toggleClass('active');
   })
-
+  // $(window).on('resize',function (e) {
+  //   if(window.innerWidth < 992){
+  //     $('.services_02 .arrow').style({})
+  //     team_carousel.trigger('destroy.owl.carousel');
+  //   }
+  //   else{
+  //     team_carousel.owlCarousel(team_settings);
+  //   }
+  // });
 
   
 
