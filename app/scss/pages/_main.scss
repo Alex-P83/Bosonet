@@ -82,6 +82,12 @@
     height: 1080px;
     padding-top: 310px;
     overflow: hidden;
+    .row{
+        height: 100%;
+        .teams_wrapper{
+            height: 100%;
+        }
+    }
     .container{
         height: 100%;
         &.float_block{
@@ -109,7 +115,7 @@
                 top:50%;
                 transform: translate(61%, -50%);
                 right:0;
-                content:url('../../img/figure.svg');
+                content:url('../img/figure.svg');
                 font-size: 0;
             }
         }
@@ -136,14 +142,12 @@
                 top:50%;
                 left:50%;
                 transform: translate(-50%, -50%);
-                content:url('../../img/arrow_circle.svg');
+                content:url('../img/arrow_circle.svg');
                 font-size: 0;
             }
         }
     }
     #scrollBarElement{
-        max-width: 1250px;
-        margin: 0 auto;
         height: 100%;
         padding-left: 30px;
         background: $white;
@@ -242,6 +246,31 @@
     overflow: hidden;
     padding-top: 155px;
     padding-bottom: 60px;
+    .backgound_container{
+        position: absolute;
+        top:0;
+        left:50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        content:'';
+        .row{
+            height: 100%;
+        }
+        .backgound_block{
+            position: relative;
+            background: $dark-blue;
+            &:after{
+                position: absolute;
+                top:0;
+                bottom:0;
+                left:0;
+                right: -1000px;
+                content:'';
+                background: $dark-blue;
+            }
+        }
+    }
     .title{
         position: relative;
         z-index: 2;
@@ -251,25 +280,16 @@
         margin-bottom: 120px;
     }
     &_back{
-        position: relative;
+        position:inherit;
         padding-left: 140px;
         padding-right: 140px;
-        z-index: 1;
-        &:after{
-            position: absolute;
-            top:-500px;
-            left:0;
-            right:-3500px;
-            bottom:-500px;
-            content:'';
-            background:$dark-blue;
-            z-index: -1;
-        }
+        // z-index: 1;
     }    
     .text{
+        position: relative;
         column-count: 2;
+        z-index: 1;
         p{
-            font-size: 18px;
             font-weight: 400;
             color: $white;
             line-height: 1.6;
@@ -277,7 +297,13 @@
     }
     .logo_wrapper{
         video{
-            display: none;
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
     }
     .logotypes{
@@ -292,16 +318,7 @@
                 margin-right: auto;
             }
         }
-    }
-    video{
-        position: absolute;
-        top:0;
-        left:0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }    
+    } 
 }
 .selected_projects{
     position: relative;
@@ -345,13 +362,16 @@
                     }                                         
                 }
             }
-            .description{
+            .wrap_description{
                 transition: .5s;
                 opacity: 0;
                 height: 0;
                 overflow: hidden;
+            }
+            .description{
                 padding-left: 40px;
-                border-left: 3px solid $green;                
+                border-left: 3px solid $green;
+                margin-top: 20px;                
                 p{
                     font-size: 14px;
                     font-weight: 400;
@@ -377,7 +397,7 @@
                         }
                     }
                 }
-                .description{
+                .wrap_description{
                     opacity: 1;
                     height: auto;
                 }
@@ -487,6 +507,11 @@
           }
       }  
     }
+    .services_02{
+        .team_tiles{
+            grid-auto-rows: 200px;
+        }
+    }
     .who_we_work{
         &_back{
             padding:0 15px;
@@ -577,6 +602,7 @@
             overflow: none;
             display: block;
             padding: 10px 0;
+            grid-auto-rows: auto;
             .owl-stage {
                 right: -50px;
               }
@@ -599,8 +625,8 @@
     .who_we_work{
         padding-top: 100px;
         background: $dark-blue;
-        video{
-            display: none;
+        .container{
+            max-width: 100%;
         }
         .title{
             margin-bottom: 30px;
@@ -612,34 +638,42 @@
             padding:0 15px;
         }
         .logo_wrapper{
+            position: relative;
+            margin:50px -15px;
             video{
                 position: relative;
                 display: block;
                 z-index: 1;
             }
-        }
-        .logotypes{
-            margin:50px 0;
-            .owl-stage{
-                position: relative;
-                .owl-item{
-                    height: 50px;
-                    img{
-                        height: 100%;
-                        margin:0;
+            .logotypes{
+                position: absolute;
+                bottom:0;
+                left:0;
+                width: 100%;
+                margin:15px 0;
+                font-size: 0;
+                .owl-stage{
+                    position: relative;
+                    .owl-item{
+                        height: 50px;
+                        img{
+                            height: 100%;
+                            margin:0;
+                        }
                     }
+                    &:before{
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        width: 1px;
+                        height: 100%;
+                        vertical-align: middle;
+                        content: '';
+                    }                
                 }
-                &:before{
-                    position: absolute;
-                    top:0;
-                    left:0;
-                    width: 1px;
-                    height: 100%;
-                    vertical-align: middle;
-                    content: '';
-                }                
-            }
+            }            
         }
+
     }
     .talk_to_us{
         padding: 75px 0 75px;
@@ -656,15 +690,21 @@
 @include respond(es-screen){
     .main_screen{
         .title{
+            padding: 0 15px;
             h1{
                 font-size: 28px;
             }            
         }
         .text{
+            padding: 0 15px;
             margin: 0;
             p{
                 font-size: 18px;
             }
+        }
+        video{
+            width: calc(100% + 30px);
+            margin: 0 -15px;
         }
     }
     .services_01{
@@ -678,6 +718,7 @@
         }         
       .services_list{
           margin-left: 0;
+          padding: 0 15px;
           li{
               font-size: 16px;
               span{
@@ -699,6 +740,7 @@
                     }
                 }
                 .inner_block{
+                    padding: 0 15px;
                     .text{
                         p{
                             margin-bottom: 10px;
@@ -721,6 +763,46 @@
             .photo{
                 height: 150px;
             }
+        }
+    }
+    .selected_projects{
+        padding: 30px 0;
+        .project_list{
+            padding: 0 15px;
+          li{
+            .project_title{
+               h2{
+                   font-size: 16px;
+                   i{
+                       font-size: 10px;
+                       font-weight: 300;
+                       margin-right: 10px;
+                   }
+                   span{
+                       padding: 0!important;
+                       &:after{
+                           display: none;
+                       }
+                   }
+               }   
+            }
+            .wrap_description{
+                .description{
+                    padding-left: 10px;
+                }
+            }   
+          } 
+        } 
+    }
+    .who_we_work{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        .text{
+            padding: 0 15px;
+        }
+        .logo_wrapper{
+            margin-top: 30px;
+            margin-bottom: 30px;
         }
     }
     .talk_to_us{

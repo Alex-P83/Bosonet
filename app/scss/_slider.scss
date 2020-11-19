@@ -52,6 +52,28 @@
     .owl-stage {
       left: -50px;
     }
+    .owl-nav{
+      text-align: center;
+      margin-top: 30px;
+      button{
+        font-size: 0;
+        margin:0 5px;
+        outline: none;
+        transition: opacity 0.2s;
+        z-index: 3;
+        svg{
+          use{
+            fill:$green;
+          }
+        }
+        &.owl-prev{
+          transform: rotateY(-180deg);
+        }
+        &:hover{
+          opacity: 0.6;
+        }
+      }
+    }
     .project_slide {
       position: relative;
       padding: 18px;

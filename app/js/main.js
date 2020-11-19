@@ -34,7 +34,14 @@ $(function(){
         responsive:{
             0:{
                 items:1,
-              stagePadding:0,  
+                stagePadding:0,
+                nav:true,
+                autoHeight:true,
+                navText : ['<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>','<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>'],  
+            },
+            767:{
+              stagePadding:0,
+              nav:false
             },
             1200:{
                 items:1
@@ -95,19 +102,17 @@ $(function(){
     $('.inner_block').slideToggle();
     $('.services_02_back').toggleClass('active');
   })
-  // $(window).on('resize',function (e) {
-  //   if(window.innerWidth < 992){
-  //     $('.services_02 .arrow').style({})
-  //     team_carousel.trigger('destroy.owl.carousel');
-  //   }
-  //   else{
-  //     team_carousel.owlCarousel(team_settings);
-  //   }
-  // });
 
-  
+  // Hidden services text
+  var services_block = $('.services_02 .inner_block'); 
+  $(window).on('resize',function(){
+      var wid = $(window).width();
+      if(wid < 992 && services_block.is(':hidden')) {
+          services_block.removeAttr('style'); 
+          $('.services_02_back').removeClass('active');    
+      }
+  });  
 
-  
 });
 
  // Menu button
@@ -133,11 +138,12 @@ $(function(){
         });
       });
       
-      // Hidden menu
-      var menu = $('header .menu-wrapper'); 
-      $(window).resize(function(){
-          var wid = $(window).width();
-          if(wid > 570 && menu.is(':hidden')) {
-              menu.removeAttr('style');      
-          }
-      });  
+// Hidden menu
+var menu = $('header .menu-wrapper'); 
+$(window).on('resize',function(){
+    var wid = $(window).width();
+    if(wid > 570 && menu.is(':hidden')) {
+        menu.removeAttr('style');      
+    }
+});
+    
