@@ -131,13 +131,13 @@ $(function(){
     }
   })();
 
-    ///Drop menu
-    $(function(){
-        $('.colapse-menu-button .c-hamburger').on('click',function(){
-          $('header .menu-wrapper').slideToggle();
-        });
-      });
-      
+///Drop menu
+$(function(){
+    $('.colapse-menu-button .c-hamburger').on('click',function(){
+      $('header .menu-wrapper').slideToggle();
+    });
+  });
+  
 // Hidden menu
 var menu = $('header .menu-wrapper'); 
 $(window).on('resize',function(){
@@ -145,5 +145,9 @@ $(window).on('resize',function(){
     if(wid > 570 && menu.is(':hidden')) {
         menu.removeAttr('style');      
     }
+});
+
+const lazyContent = new LazyLoad({
+  // use_native: true 
 });
     
