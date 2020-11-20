@@ -148,6 +148,6 @@ $(window).on('resize',function(){
 });
 
 const lazyContent = new LazyLoad({
-  // use_native: true 
+  use_native: false 
 });
     

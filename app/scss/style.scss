@@ -10,8 +10,13 @@
 @import "typography";
 @import "slider";
 @import "pages/main";
+@import "pages/projects";
+@import "pages/company";
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     position: relative;
     font-family: "Muli", sans-serif;
     font-size: 16px;
@@ -19,6 +24,13 @@ body {
     background: $white url('../img/grid.svg');
     color: $black;
 }
+
+[dir="rtl"]{
+    body{
+        font-family: 'Heebo', sans-serif;
+    }
+}
+
 @media (min-width: 1300px){
     .container{
        max-width: 1660px; 

@@ -6,32 +6,67 @@ header{
     padding-top: 50px;
     padding-bottom: 20px;
     z-index: 2;
-}
-.menu{
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    li{
-        list-style: none;
-        padding: 0 26px;
-        a{
-            font-style: 16px;
-            font-weight: 700;
-            color:$blue;
-            text-decoration: none;
-        }
-        &.active{
-            a{
-                border-bottom: 2px solid $blue;
+    .logo{
+        svg{
+            use{
+                fill:$blue;
             }
         }
-        &:first-child{
-            padding-left: 0;
+    }
+    .menu{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        li{
+            list-style: none;
+            padding: 0 26px;
+            a{
+                font-style: 16px;
+                font-weight: 700;
+                color:$blue;
+                text-decoration: none;
+                &:hover{
+                    border-bottom: 2px solid $blue;
+                }
+            }
+            &.active{
+                a{
+                    border-bottom: 2px solid $blue;
+                }
+            }
+            &:first-child{
+                padding-left: 0;
+            }
+            &:last-child{
+                padding-right: 0;
+            }
         }
-        &:last-child{
-            padding-right: 0;
+    }
+    &.white_style{
+        .logo{
+            svg{
+                use{
+                    fill:$white;
+                }
+            }
+        }
+        .menu{
+            li{
+                a{
+                    color:$white;
+                    border-color: $white;
+                }
+            }
+        }
+    }    
+}
+
+html[dir="rtl"]{
+    header{
+        .logo{
+            float: right;
         }
     }
 }

@@ -465,6 +465,16 @@
     }    
 }
 
+[dir="rtl"]{
+    .main_screen{
+        .title{
+            h1{
+                font-family: 'Heebo', sans-serif; 
+            }
+        }
+    }
+}
+
 @include respond(2xl-screen){
     .services_02{
       .inner_block{
