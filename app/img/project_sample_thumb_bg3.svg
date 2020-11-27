@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="437" height="908.041" viewBox="0 0 437 908.041">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Fill_2" data-name="Fill 2" d="M373.819,908H63.181C28.287,908,0,879.371,0,844.056V63.944C0,28.629,28.287,0,63.181,0H373.819C408.713,0,437,28.629,437,63.944V844.056C437,879.371,408.713,908,373.819,908" transform="translate(16.455 14.959)" fill="#fafafa"/>
+    </clipPath>
+  </defs>
+  <g id="Group_48" data-name="Group 48" transform="translate(-16.455 -14.918)">
+    <path id="Fill_2-2" data-name="Fill 2" d="M373.819,908H63.181C28.287,908,0,879.371,0,844.056V63.944C0,28.629,28.287,0,63.181,0H373.819C408.713,0,437,28.629,437,63.944V844.056C437,879.371,408.713,908,373.819,908" transform="translate(16.455 14.959)" fill="#fafafa"/>
+    <g id="Группа_масок_65" data-name="Группа масок 65" transform="translate(0 -0.041)" clip-path="url(#clip-path)">
+      <rect id="Прямоугольник_17831" data-name="Прямоугольник 17831" width="254.15" height="984.396" transform="translate(-266.684 -274.698) rotate(-30)" fill="#d1d1d1"/>
+    </g>
+  </g>
+</svg>

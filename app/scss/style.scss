@@ -9,9 +9,16 @@
 @import "menu-btn";
 @import "typography";
 @import "slider";
+@import "animation";
 @import "pages/main";
 @import "pages/projects";
 @import "pages/company";
+@import "pages/project_sample";
+@import "pages/services";
+@import "pages/jobs";
+@import "pages/jobs_apply";
+@import "pages/contacts_us";
+
 
 body {
     display: flex;
@@ -22,6 +29,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     background: $white url('../img/grid.svg');
+    background-size: contain;
     color: $black;
 }
 

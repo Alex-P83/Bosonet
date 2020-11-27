@@ -1,0 +1,57 @@
+.project_tile {
+  width: 100%;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 320px;
+  overflow: auto;
+  font-size: 0;
+  .photo {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:nth-of-type(7n-6) {
+      grid-row: span 2;
+      grid-column: span 1;
+    }
+    &:nth-of-type(7n-2) {
+      grid-row: span 2;
+      grid-column: span 1;
+    }
+  }
+}
+.project {
+  .project_about {
+    .project_item-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      .project_item {
+        max-width: 80px;
+        text-align: center;
+        margin: 0 20px;
+        .icon {
+          width: 74px;
+          height: 74px;
+          margin: 0 auto;
+        }
+        span {
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 1.5;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+.project_sample_sliders {
+  padding: 90px 0 190px;
+  background: $dark-blue url("../img/grid.svg");
+}
