@@ -1,19 +1,35 @@
-.btn-primary{
-    background: $green;
-    border: none;
-    border-radius: 3px;
-    font-size: 24px;
-    font-family: 'Muli';
-    font-weight: 600;
-    outline: none;
-    box-shadow: none;
-    &:hover{
-       background: $green; 
-    }
-    &:active{
-       background: $green!important; 
-    }
-    &:focus{
-       box-shadow: none!important;
-    }        
+.btn{
+      border: none;
+      border-radius: 0.3rem;
+      font-size: 2.4rem;
+      font-family: 'Muli';
+      font-weight: 600;
+      outline: none;
+      box-shadow: none;   
+   &-primary{
+      background: $green;
+      &:hover{
+         background: $green; 
+      }
+      &:active{
+         background: $green!important; 
+      }
+      &:focus{
+         box-shadow: none!important;
+      }       
+   }
+   &-secondary{
+      background: $light-green;
+      &:hover{
+         background: $light-green; 
+      }
+      &:active{
+         background: $light-green!important;
+         color:$black!important; 
+      }
+      &:focus{
+         background: $light-green; 
+         box-shadow: none!important;
+      } 
+   }    
 }

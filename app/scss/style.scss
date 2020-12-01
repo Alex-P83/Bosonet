@@ -19,14 +19,42 @@
 @import "pages/jobs_apply";
 @import "pages/contacts_us";
 
-
+html {
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  
+    // @include respond(tab-land) {
+    //   // width < 1200?
+    //   font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+    // }
+  
+    // @include respond(mobDevise) {
+    //   // width < 900?
+    //   font-size: 51%; //1 rem = 8px, 8/16 = 50%
+    // }
+    // @include respond(tab-sm) {
+    //   // width < 768?
+    //   font-size: 47%; //1 rem = 7px, 7/16 = 44%
+    // }
+    // @include respond(phone) {
+    //   // width < 1200?
+    //   font-size: 46%; //1 rem = 6px, 6/16 = 38%
+    // }
+    // @include respond(iPhone7) {
+    //   // width < 1200?
+    //   font-size: 56%; //1 rem = 6px, 6/16 = 38%
+    // }
+    // @include respond(big-desktop) {
+    //   font-size: 75%; //1rem = 12, 12/16
+    // }
+  }
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     position: relative;
     font-family: "Muli", sans-serif;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
     background: $white url('../img/grid.svg');
     background-size: contain;
@@ -38,6 +66,19 @@ body {
         font-family: 'Heebo', sans-serif;
     }
 }
+[class*='row'] {
+    margin-right: -0.8rem;
+    margin-left: -0.8rem;   
+}
+[class*='col-'] {
+    padding-right:0.8rem;
+    padding-left:0.8rem; 
+}
+
+.container,.container-fluid{
+    padding-right:0.8rem;
+    padding-left:0.8rem;     
+}
 
 @media (min-width: 1300px){
     .container{
@@ -48,5 +89,21 @@ body {
 @include respond(s-screen){
     body{
         background: $white;
+    }
+}
+
+@include respond(es-screen){
+    [class*='row'] {
+        margin-right:-1.5rem;
+        margin-left:-1.5rem;     
+    }
+    [class*='col-'] {
+        padding-right:1.5rem;
+        padding-left:1.5rem; 
+    }
+    
+    .container,.container-fluid{
+        padding-right:1.5rem;
+        padding-left:1.5rem;     
     }
 }

@@ -1,50 +1,197 @@
-.main_screen{
-    &.jobs_page{
-        height: 800px;
-        padding-bottom: 50px;
-        .container{
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            .title{
-                margin-bottom: 90px;
-                h1{
-                    color:$white;
-                }
-                p{
-                    font-size: 38px;
-                    font-weight: 400;
-                    color:$white;
-                }
-            }
+.main_screen {
+  &.jobs_page {
+    height: 80rem;
+    padding-bottom: 5rem;
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      .title {
+        margin-bottom: 9rem;
+        h1 {
+          color: $white;
         }
-        video{
-            position: absolute;
-            top:0;
-            left:0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
+        p {
+          font-size: 3.8rem;
+          font-weight: 400;
+          color: $white;
         }
+      }
     }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+  }
 }
 
-.jobs{
-    background-image: url('../img/company_bg_element1.svg') , url('../img/company_bg_element1.svg');
-    background-position:top 800px left -370px, top 215px right -465px; 
-    background-repeat:no-repeat; 
-    padding: 80px 0 150px;
-    .text{
-        background: $white;
-        border-radius: 50px;
-        padding: 40px 300px 40px 90px;
-        p{
-            font-size: 38px;
-            line-height: 1.5;
-            font-weight: 400;
-            margin-bottom: 60px;
+.jobs {
+  background-image: url("../img/company_bg_element1.svg"),
+    url("../img/company_bg_element1.svg");
+  background-position: top 80rem left -37rem, top 21.5rem right -46.5rem;
+  background-repeat: no-repeat;
+  padding: 8rem 0 15rem;
+  &_col{
+      text-align: center;
+      margin-bottom: 5rem;
+      img{
+          max-width: 100%;
+      }
+      h2{
+          margin-top: 4rem;
+          margin-bottom: 1rem;
+      }
+      p{
+        font-size: 3.8rem;
+      }
+  }
+  &_wrapper{
+      background: $white;
+      border-radius: 5rem;
+      padding: 4rem 30rem 4rem 9rem;
+      margin-top: 11rem;
+      .text{
+          h2{
+              font-size: 3.8rem;
+              line-height: 1.5;
+              margin-bottom: 6rem;            
+          }
+          p{
+              font-size: 3.8rem;
+              line-height: 1.5;
+              font-weight: 400;
+              margin-bottom: 6rem;
+          }
+      }
+      .request_block{
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          grid-template-rows: auto;
+          gap: 14rem;
+          margin-top: 6rem;
+          p{
+              font-size: 1.8rem;
+          }
+          a{
+              font-size: 1.8rem;
+              font-weight: 400;
+              padding: 0.8rem 2.2rem;
+              color:$dark-blue;
+              svg{
+                  margin-left: 0.7rem;
+                  use{
+                      fill:$dark-blue;
+                  }
+              }
+          }
+      }                
+  }
+}
+
+@include respond(2xl-screen) {
+  .jobs {
+    &_wrapper {
+      padding: 1.5rem;
+    }
+  }
+}
+
+@include respond(m-screen) {
+  .jobs {
+    .text {
+      h2 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 3rem;
+      }
+    }
+    .request_block{
+        .text{
+            p{
+                font-size: 1.8rem;
+            }
         }
     }
+  }
+}
+
+@include respond(s-screen) {
+  .main_screen {
+    &.jobs_page {
+      video {
+        margin: 0;
+      }
+      .container {
+        .title {
+          p {
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+    } 
+  }
+  .jobs {
+    .text {
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+      p {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+    }
+    .request_block{
+        grid-template-columns: 1fr;
+        .text{
+            p{
+                font-size: 1.8rem;
+            }
+        }
+    }    
+  }
+}
+
+@include respond(es-screen) {
+  .main_screen {
+    &.jobs_page {
+      height: 30rem;
+      video {
+        margin: 0;
+      }
+      .container {
+        .title {
+          margin: 0;
+          padding: 0;
+          p {
+            font-size: 1.8rem;
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .jobs {
+    .text {
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+      }
+      p {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
 }

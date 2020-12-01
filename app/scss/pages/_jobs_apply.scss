@@ -1,19 +1,19 @@
 .main_screen{
     &.jobs_apply_page{
-        height: 800px;
-        padding-bottom: 50px;
+        height: 80rem;
+        padding-bottom: 5rem;
         .container{
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             .title{
-                margin-bottom: 90px;
+                margin-bottom: 9rem;
                 h1{
                     color:$white;
                 }
                 p{
-                    font-size: 38px;
+                    font-size: 3.8rem;
                     font-weight: 400;
                     color:$white;
                 }
@@ -33,18 +33,189 @@
 
 .jobs_apply{
     background-image: url('../img/company_bg_element1.svg') , url('../img/company_bg_element1.svg');
-    background-position:top 800px left -370px, top 215px right -465px; 
+    background-position:top 80rem left -37rem, top 21.5rem right -46.5rem; 
     background-repeat:no-repeat; 
-    padding: 80px 0 150px;
-    .text{
+    padding: 8rem 0 15rem;
+    &_wrapper{
         background: $white;
-        border-radius: 50px;
-        padding: 40px 300px 40px 90px;
+        border-radius: 5rem;
+        padding: 4rem 30rem 4rem 9rem;        
+    }
+    .text{
+        h2{
+            font-size: 3.8rem;
+            line-height: 1.5;
+            margin-bottom: 6rem;            
+        }
         p{
-            font-size: 38px;
+            font-size: 3.8rem;
             line-height: 1.5;
             font-weight: 400;
-            margin-bottom: 60px;
+            margin-bottom: 6rem;
         }
     }
+    .form {
+        background: $white;
+        padding: 12rem;
+        text-align: center;
+        max-width: 81rem;
+        width: 100%;
+        margin: 0 auto;
+        h2 {
+          font-family: "Muli";
+          font-weight: 600;
+          margin-bottom: 4rem;
+        }
+        form {
+          max-width: 47.5rem;
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+          input {
+            margin-bottom: 3rem;
+            outline: none;
+          }
+          .upload_form_field{
+              input{
+                  display: none;
+              }
+              button{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 100%;
+                  margin-bottom: 1.5rem;
+                  .file_name{
+                      font-weight: 300;
+                      max-width: 100%;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      white-space: nowrap;
+                      margin:0 0.5rem;
+                  }
+                  .btn_text{
+                      flex-shrink: 0;
+                  }
+              }
+          }
+          button {
+            height: 6.2rem;
+            color: $black;
+          }
+        }
+      }
+}
+
+@include respond(2xl-screen){
+    .jobs_apply{
+        &_wrapper{
+            padding: 1.5rem;
+        }
+    }
+}
+
+@include respond(m-screen){
+    .jobs_apply{
+        .text{
+            h2{
+                font-size: 3rem;
+            }
+            p{
+                font-size: 3rem;
+            }
+        }
+        .form {
+          padding: 5rem;
+          max-width: 50rem;
+          form {
+            max-width: none;
+          }
+        }
+    }
+}
+
+@include respond(s-screen){
+    .main_screen{
+        &.jobs_apply_page{
+            video{
+                margin: 0;
+            }
+            .container{
+                .title{
+                    p{
+                        br{
+                            display: none;
+                        }
+                    } 
+                }                
+            } 
+        }
+    }
+    .jobs_apply{
+        .text{
+            h2{
+                font-size: 2.5rem;
+                margin-bottom: 3rem;                
+            }
+            p{
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+            }
+        }
+    }    
+}
+
+@include respond(es-screen){
+    .main_screen{
+        &.jobs_apply_page{
+            height: 30rem;
+            video{
+                margin: 0;
+            }
+            .container{
+                .title{
+                    margin: 0;
+                    padding: 0;
+                    p{
+                        font-size: 1.8rem;
+                        br{
+                            display: none;
+                        }
+                    } 
+                }                
+            }            
+        }
+    }     
+    .jobs_apply{
+        .text{
+            h2{
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;                
+            }
+            p{
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
+            }
+        }        
+        .form {
+          position: relative;
+          padding: 2.5rem;
+          margin-bottom: 2rem;
+          h2 {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+          }
+          form {
+            background: $white;
+            position: relative;
+            input {
+              font-size: 1.4rem;
+            }
+            button {
+              height: 4.9rem;
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }        
 }

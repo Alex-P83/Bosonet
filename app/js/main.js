@@ -326,3 +326,39 @@ anime.timeline({loop: true})
     delay: (el, i) => 100 + 30 * i
   });  
 }
+
+//Upload files
+
+ const uploadBtn = $('.upload_form_field button');
+ const uploadInput = $('.upload_form_field input[type="file"]');
+ const btnDefault = uploadBtn.html();
+
+uploadBtn.on('click',function(){
+  uploadInput.trigger('click');
+})
+
+uploadInput.on('change', function(){
+  const fileName = $(this).val().split('\\').pop();
+  if(!fileName){
+    uploadBtn.html(btnDefault);
+    return;
+  }
+  uploadBtn.html(`<span class="file_name">${fileName}</span><span class="btn_text">Change file</span>`)
+})
+
+//Change language hebrew
+
+const langLink = $('.language a');
+  const $body = $('body');
+
+  langLink.on('click', function(e){
+      e.preventDefault();
+
+      const isHebrew = $(this).hasClass('hebrew');
+
+      if (isHebrew) {
+        $body.attr('dir', 'rtl');
+      } else {
+        $body.removeAttr('dir');
+      }
+});

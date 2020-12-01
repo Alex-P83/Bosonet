@@ -1,65 +1,165 @@
-.main_screen{
-    &.contacts_us_page{
-        height: 800px;
-        padding-bottom: 50px;
-        .container{
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            .title{
-                margin-bottom: 90px;
-                h1{
-                    color:$white;
-                }
-                p{
-                    font-size: 38px;
-                    font-weight: 400;
-                    color:$white;
-                }
-            }
+.main_screen {
+  &.contacts_us_page {
+    height: 80rem;
+    padding-bottom: 5rem;
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      .title {
+        margin-bottom: 9rem;
+        h1 {
+          color: $white;
         }
-        video{
-            position: absolute;
-            top:0;
-            left:0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
+        p {
+          font-size: 3.8rem;
+          font-weight: 400;
+          color: $white;
+        }
+      }
+    }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+  }
+}
+
+.contacts_us {
+  background: $white;
+  padding-top: 20rem;
+  padding-bottom: 30rem;
+  .form {
+    background: $white;
+    padding: 12rem;
+    text-align: center;
+    max-width: 81rem;
+    width: 100%;
+    margin: 0 auto;
+    h2 {
+      font-family: "Muli";
+      font-weight: 600;
+      margin-bottom: 4rem;
+    }
+    form {
+      max-width: 47.5rem;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      input {
+        margin-bottom: 3rem;
+        outline: none;
+      }
+      button {
+        height: 6.2rem;
+        color: $black;
+      }
+    }
+  }
+}
+
+@include respond(2xl-screen) {
+  .contacts_us {
+    .title {
+      margin-bottom: 10rem;
+    }
+  }
+}
+
+@include respond(lg-screen) {
+}
+
+@include respond(m-screen) {    
+  .contacts_us {
+    padding: 7.5rem 0 7.5rem;
+    .form {
+      padding: 5rem;
+      max-width: 50rem;
+      form {
+        max-width: none;
+      }
+    }
+  }
+}
+
+@include respond(s-screen){
+    .main_screen{
+        &.contacts_us_page{
+            video{
+                margin: 0;
+            }
+            .container{
+                .title{
+                    p{
+                        br{
+                            display: none;
+                        }
+                    } 
+                }                
+            }            
         }
     }
 }
 
-.contacts_us{
-    background: $white;
-    padding-top: 200px;
-    padding-bottom: 300px;
-    .form{
+@include respond(es-screen) {
+    .main_screen{
+        &.contacts_us_page{
+            height: 30rem;
+            video{
+                margin: 0;
+            }
+            .container{
+                .title{
+                    margin: 0;
+                    padding: 0;
+                    p{
+                        font-size: 1.8rem;
+                        br{
+                            display: none;
+                        }
+                    } 
+                }                
+            }            
+        }
+    }    
+  .contacts_us {
+    padding: 3rem 0 0;
+    overflow: hidden;
+    .form {
+      position: relative;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      &:after {
+        position: absolute;
+        top: 2rem;
+        left: -10rem;
+        right: -10rem;
+        bottom: -10rem;
+        content: "";
+        background: $dark-blue;
+        z-index: -1;
+      }
+      h2 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+      form {
         background: $white;
-        padding: 120px;
-        text-align: center;
-        max-width: 810px;
-        width: 100%;
-        margin:0 auto;
-        h2{
-            font-family: 'Muli';
-            font-weight: 600;
-            margin-bottom: 40px;
+        position: relative;
+        input {
+          font-size: 1.4rem;
         }
-        form{
-            max-width: 475px;
-            display: flex;
-            flex-direction: column;
-            margin:0 auto;
-            input{
-                margin-bottom: 30px;
-                outline: none;
-            }
-            button{
-                height: 62px;
-                color:$black;
-            }
+        button {
+          height: 4.9rem;
+          font-size: 1.6rem;
         }
+      }
     }
+  }
 }

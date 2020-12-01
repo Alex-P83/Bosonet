@@ -69,3 +69,15 @@
     font-style: normal;
 
 }
+
+//Helvetica
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/HelveticaNeue-Medium.eot');
+    src: url('../fonts/HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HelveticaNeue-Medium.woff') format('woff'),
+         url('../fonts/HelveticaNeue-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+
+}
