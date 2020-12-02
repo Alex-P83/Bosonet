@@ -115,6 +115,7 @@
   &.project_sample_mobile_slider {
     max-width: 1540px;
     margin:0 auto;
+    padding:0 1.5rem;
     .owl-nav{
       text-align: center;
       margin-top: 30px;
@@ -159,6 +160,7 @@
       transition: 0.3s;
       &.active{
         transform: scale(1.1);
+        z-index: 1;
       }
     }
     .owl-nav{
@@ -197,11 +199,10 @@
     }
   }
   &.services_slider{
-    padding-left: 190px;
     .item{
       overflow: hidden;
       .text{
-        max-width: 1345px;
+        // max-width: 1345px;
         border-radius: 50px;
         background: $white;
         padding: 40px 300px 40px 90px;
@@ -244,6 +245,37 @@
         }        
       }
     }
+    .navy{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 300px 0px 90px;      
+      button{
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1;
+        color:$black;
+        outline: none;        
+        svg{
+          use{
+            fill:$green;
+          }
+        }
+        &.owl-next{
+          svg{
+            margin-left: 10px;
+          }
+        }
+        &.owl-prev{
+          svg{
+            transform: rotate(-180deg);
+            margin-right: 10px;            
+          }
+        }        
+      }      
+    }
     .owl-dots{
       max-width: 1345px;
       display: flex;
@@ -269,6 +301,7 @@
         }
       }
     }
+
   }  
 }
 
@@ -289,6 +322,12 @@
           }
         } 
       } 
+    }
+    &.project_sample_desktop_slider{
+      margin-top: 0;
+      .owl-item.active{
+        transform: none;
+      }
     }
   }
 }

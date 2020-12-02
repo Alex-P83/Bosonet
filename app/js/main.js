@@ -64,16 +64,17 @@ $(function(){
         thumbsPrerendered: true,
         animateOut: 'fadeOut',
         smartSpeed:0,
+        dotsContainer:'.cony .dots',
+        navContainer:'.navy',
         navText : ['<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg> פיתוח מערכות ניהול מותאמות','ניהול ופיתוח פרויקטים <svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>']
     });
  
     function onIn(event){
-        const currentItem = event.item.index + 1;
+        const currentItem = event.item.index;
         const count = event.item.count;
-        const text = `${currentItem}/${count}`;
-        const textDiv = $('.owl-dots');
-        const counter = $('<div class="counter"></div>').text(text);
-        textDiv.append(counter);
+        const text = `${currentItem <9 ? 0 : '' }${currentItem + 1}/${count}`;
+        // const textDiv = $('.owl-dots');
+        $('.cony .page').text(text);
     }
 
 // Project sample 
@@ -99,12 +100,10 @@ $(function(){
         responsive:{
             0:{
                 items:1,
-                stagePadding:0,
-                nav:true,
-                autoHeight:true,
-                navText : ['<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>','<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>'],  
+                stagePadding:0
             },
-            767:{
+            576:{
+              items:2,
               stagePadding:0,
               nav:false
             },
@@ -119,25 +118,32 @@ $(function(){
        // onChanged: (e) => { triggerSlider(e, projectSampleMobile) },
         stagePadding: 465,
         loop:true,
-        margin:100,
         nav:false,
         dots:false,
         items:1,
         responsive:{
             0:{
                 items:1,
-                stagePadding:0,
-                nav:true,
-                autoHeight:true,
-                navText : ['<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>','<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>'],  
+                stagePadding:15
             },
+            576:{
+                items:1,
+                stagePadding:50,
+                margin:40,
+            },            
             767:{
-              stagePadding:0,
-              nav:false
+              stagePadding:200,
+              margin:100,
             },
             1200:{
-                items:1
-            }
+                stagePadding: 300,
+                margin:100,
+            },                     
+            1800:{
+              margin:100,
+              stagePadding: 465,
+              items:1
+            }            
         }
     });
 
@@ -162,6 +168,25 @@ $(function(){
         team_carousel.owlCarousel(team_settings);
     }
 
+    let project_tile_carousel = $('.project_detail .project_tile');
+    let project_tile_settings = {
+      stagePadding: 30,
+      loop:true,
+      margin:10,
+      nav:false,
+      thumbs: false,
+      items:2,
+      responsive:{
+          576:{
+            stagePadding: 50
+          }
+      }
+    };
+
+    if(window.innerWidth < 992){
+      project_tile_carousel.owlCarousel(project_tile_settings);
+    }
+    
     let logotype_carousel = $('.who_we_work .logotypes');
     let logotype_settings = {
       loop:true,
@@ -176,15 +201,19 @@ $(function(){
     }    
 
   
+
+
   //Resize slider
   $(window).on('resize',function (e) {
     if(window.innerWidth > 992){
       team_carousel.trigger('destroy.owl.carousel');
       logotype_carousel.trigger('destroy.owl.carousel');
+      project_tile_carousel.trigger('destroy.owl.carousel');    
     }
     else{
       team_carousel.owlCarousel(team_settings);
       logotype_carousel.owlCarousel(logotype_settings);
+      project_tile_carousel.owlCarousel(project_tile_settings);
     }
   });
 

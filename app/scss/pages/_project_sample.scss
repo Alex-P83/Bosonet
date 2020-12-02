@@ -1,9 +1,60 @@
+.main_screen{
+  &.project_sample_page{
+      height: 80rem;
+      padding-bottom: 5rem;
+      .container{
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          .title {
+            margin-bottom: 9rem;
+            h1 {
+              color: $white;
+            }
+          }
+          .project_items_info{
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            li{
+              list-style: none;
+              margin-right: 3rem;
+              .project_item{
+                display: flex;
+                align-items: center;
+                .item_text{
+                  margin-left: 0.7rem;
+                  span{
+                    display: block;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    color:$white;
+                  }
+                }
+              }
+            }
+          }          
+      }
+      video{
+          position: absolute;
+          top:0;
+          left:0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: -1;
+      }
+  }
+}
+
 .project_tile {
   width: 100%;
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 1.6rem;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 320px;
+  grid-auto-rows: 32rem;
   overflow: auto;
   font-size: 0;
   .photo {
@@ -24,34 +75,177 @@
     }
   }
 }
+
 .project {
-  .project_about {
+  &_detail{
+    overflow: hidden;
+    padding: 8rem 0 0.5rem;
+    &_wrapper{
+      background: $white;
+      border-radius: 5rem;
+      padding: 2.4rem 4rem 9rem;
+      margin: 0 -4rem;
+    }
+    &_info{
+      margin-bottom: 10rem;
+    }
+  }
+  &_info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8rem;
+    div{
+      margin:0 1.2rem;
+      &:first-child{
+        margin-left: 0;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  &_about {
+    max-width: 84rem;
+    .text{
+      margin-top: 4rem;
+      margin-bottom: 5rem;
+      p{
+        line-height: 1.8;
+      }
+    }
     .project_item-wrapper {
       display: flex;
       justify-content: flex-start;
-      margin-top: 30px;
+      margin-top: 3rem;
       flex-wrap: wrap;
       .project_item {
-        max-width: 80px;
+        max-width: 8rem;
         text-align: center;
-        margin: 0 20px;
+        margin: 0 2rem 2rem;
         .icon {
-          width: 74px;
-          height: 74px;
+          width: 7.4rem;
+          height: 7.4rem;
           margin: 0 auto;
         }
         span {
           display: inline-block;
-          font-size: 12px;
+          font-size: 1.2rem;
           font-weight: 400;
           line-height: 1.5;
-          margin-top: 15px;
+          margin-top: 1.5rem;
         }
       }
     }
   }
+  &_view{
+    img{
+      float: right;
+      max-width: 100%;
+    }
+  }
 }
+
 .project_sample_sliders {
-  padding: 90px 0 190px;
+  padding: 9rem 0 19rem;
   background: $dark-blue url("../img/grid.svg");
+}
+
+@include respond(xl-screen){
+  .project{
+    &_view{
+      margin:2rem 0;
+      img{
+        float: none;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+@include respond(lg-screen) {
+
+}
+
+@include respond(m-screen) { 
+    .project_about{
+      .project_item-wrapper{
+        justify-content: center;
+      }
+    }
+    .project_view{
+      text-align: center;
+    }
+    .project_detail{
+      &_wrapper{
+        .project_tile{
+          .photo{
+            height: 25rem;
+          }
+        }
+      }
+    }
+}
+
+@include respond(s-screen){
+    .main_screen{
+        &.project_sample_page{
+            video{
+                margin: 0;
+            }
+            .container{
+                .title{
+                    p{
+                        br{
+                            display: none;
+                        }
+                    } 
+                }
+                .project_items_info{
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  li{
+                    margin-right: 0;
+                    .project_item{
+                      flex-direction: column;
+                      margin:0 0.5rem;
+                      .item_text{
+                        margin:1rem 0 0;
+                        text-align: center;
+                      }
+                    }
+                  }
+                }                 
+            }            
+        }
+    }
+    .project_detail{
+      &_wrapper{
+        .project_tile{
+          .photo{
+            height: 18rem;
+          }
+        }
+      }
+    }
+}
+
+@include respond(es-screen) {
+    .main_screen{
+        &.project_sample_page{
+          height: auto;
+            min-height: 30rem;
+            video{
+                margin: 0;
+            }
+            .container{
+                .title{
+                    margin: 0 0 3rem;
+                    padding: 0;
+                }                
+            }            
+        }
+    } 
+    .project_sample_sliders{
+      padding: 3rem 0 3rem;
+    }   
 }

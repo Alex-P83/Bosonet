@@ -110,3 +110,63 @@
         }
     }
 }
+
+@include respond(xl-screen){
+    .projects{
+        .project{
+            &_view{
+                margin:5rem 0;
+                img{
+                float: none;
+                display: inline-block;
+                }
+            }
+        }        
+    }
+  }
+  
+  @include respond(s-screen){
+      .main_screen{
+          &.projects_page{
+              video{
+                  margin: 0;
+              }
+              .container{
+                .project_links{
+                    flex-wrap: wrap;
+                    li{
+                        margin-bottom: 1rem;
+                    }
+                }
+              }            
+          }
+      }
+      .project_detail{
+        &_wrapper{
+          .project_tile{
+            .photo{
+              height: 18rem;
+            }
+          }
+        }
+      }
+  }
+  
+  @include respond(es-screen) {
+      .main_screen{
+          &.projects_page{
+              height: auto;
+              min-height: 30rem;
+              video{
+                  margin: 0;
+              }
+              .container{
+                  .title{
+                      margin: 0 0 3rem;
+                      padding: 0;
+                  }                
+              }            
+          }
+      }  
+  }
+  
