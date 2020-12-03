@@ -64,7 +64,7 @@ $(function(){
         thumbsPrerendered: true,
         animateOut: 'fadeOut',
         smartSpeed:0,
-        dotsContainer:'.cony .dots',
+        dotsContainer:'.counter_block .dots',
         navContainer:'.navy',
         navText : ['<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg> פיתוח מערכות ניהול מותאמות','ניהול ופיתוח פרויקטים <svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>']
     });
@@ -72,9 +72,9 @@ $(function(){
     function onIn(event){
         const currentItem = event.item.index;
         const count = event.item.count;
-        const text = `${currentItem <9 ? 0 : '' }${currentItem + 1}/${count}`;
+        const text = `${currentItem < 9 ? 0 : ''}${currentItem + 1}/${count}`;
         // const textDiv = $('.owl-dots');
-        $('.cony .page').text(text);
+        $('.counter_block .page').text(text);
     }
 
 // Project sample 

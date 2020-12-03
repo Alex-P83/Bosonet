@@ -2,25 +2,25 @@
   &.testimonials_slider {
     direction: ltr;
     text-align: center;
-    max-width: 500px;
+    max-width: 50rem;
     margin: 0 auto;
     .owl-item {
       .item {
         .testimonials_text {
           img{
-            width: 32px;
-            height: 26px;
+            width: 3.2rem;
+            height: 2.6rem;
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 3rem;
           }
           p {
-            font-size: 14px;
+            font-size: 1.4rem;
             font-weight: 400;
             color: $green;
           }
         }
         .name {
-          font-size: 14px;
+          font-size: 1.4rem;
           font-weight: 400;
           color: $green;
         }
@@ -29,7 +29,7 @@
     .owl-nav{
       button{
         font-size: 0;
-        margin:0 5px;
+        margin:0 0.5rem;
         outline: none;
         transition: opacity 0.2s;
         z-index: 3;
@@ -50,16 +50,16 @@
   &.project_slider {
     direction: ltr;
     width: auto;
-    margin-right: -15px;
+    margin-right: -1.5rem;
     .owl-stage {
-      left: -50px;
+      left: -5rem;
     }
     .owl-nav{
       text-align: center;
-      margin-top: 30px;
+      margin-top: 3rem;
       button{
         font-size: 0;
-        margin:0 5px;
+        margin:0 0.5rem;
         outline: none;
         transition: opacity 0.2s;
         z-index: 3;
@@ -78,50 +78,50 @@
     }
     .project_slide {
       position: relative;
-      padding: 18px;
+      padding: 1.8rem;
       background: url("../img/bg_slide.svg") no-repeat center;
       background-size: contain;
-      border-radius: 55px;
+      border-radius: 5.5rem;
       overflow: hidden;
       img {
         position: relative;
-        border-radius: 38px;
+        border-radius: 3.8rem;
       }
     }
     .project_item-wrapper {
       display: flex;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 3rem;
       flex-wrap: wrap;
       .project_item {
-        max-width: 80px;
+        max-width: 8rem;
         text-align: center;
-        margin: 0 20px;
+        margin: 0 2rem;
         .icon {
-          width: 74px;
-          height: 74px;
+          width: 7.4rem;
+          height: 7.4rem;
           margin: 0 auto;
         }
         span {
           display: inline-block;
-          font-size: 12px;
+          font-size: 1.2rem;
           font-weight: 400;
           line-height: 1.5;
-          margin-top: 15px;
+          margin-top: 1.5rem;
         }
       }
     }
   }
   &.project_sample_mobile_slider {
-    max-width: 1540px;
+    max-width: 154rem;
     margin:0 auto;
     padding:0 1.5rem;
     .owl-nav{
       text-align: center;
-      margin-top: 30px;
+      margin-top: 3rem;
       button{
         font-size: 0;
-        margin:0 5px;
+        margin:0 0.5rem;
         outline: none;
         transition: opacity 0.2s;
         z-index: 3;
@@ -140,21 +140,21 @@
     }
     .project_sample_slide {
       position: relative;
-      padding: 18px;
+      padding: 1.8rem;
       background: url("../img/bg_slide.svg") no-repeat center;
       background-size: cover;
-      border-radius: 55px;
+      border-radius: 5.5rem;
       overflow: hidden;
       img {
         position: relative;
-        border-radius: 38px;
+        border-radius: 3.8rem;
       }
     }
   }   
   &.project_sample_desktop_slider {
-    margin-top: 90px;
+    margin-top: 9rem;
     .owl-stage{
-      padding: 50px 0;
+      padding: 5rem 0;
     }
     .owl-item{
       transition: 0.3s;
@@ -165,10 +165,10 @@
     }
     .owl-nav{
       text-align: center;
-      margin-top: 30px;
+      margin-top: 3rem;
       button{
         font-size: 0;
-        margin:0 5px;
+        margin:0 0.5rem;
         outline: none;
         transition: opacity 0.2s;
         z-index: 3;
@@ -187,14 +187,14 @@
     }
     .project_sample_slide {
       position: relative;
-      padding: 18px;
+      padding: 1.8rem;
       background: url("../img/bg_slide.svg") no-repeat center;
       background-size: contain;
-      border-radius: 55px;
+      border-radius: 5.5rem;
       overflow: hidden;
       img {
         position: relative;
-        border-radius: 38px;
+        border-radius: 3.8rem;
       }
     }
   }
@@ -202,107 +202,77 @@
     .item{
       overflow: hidden;
       .text{
-        // max-width: 1345px;
-        border-radius: 50px;
+        border-radius: 5rem;
         background: $white;
-        padding: 40px 300px 40px 90px;
+        padding: 4rem 30rem 4rem 9rem;
+        p{
+          font-size: 3.8rem;
+        }
       }
       .collage{
         width: max-content;
-        padding-left: 90px;
+        padding-left: 9rem;
       }
     }
-    .owl-nav{
-      max-width: 1345px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0px 300px 0px 90px;
-
-      button{
-        display: flex;
-        align-items: center;
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 1;
-        color:$black;
-        outline: none;        
-        svg{
-          use{
-            fill:$green;
-          }
-        }
-        &.owl-next{
-          svg{
-            margin-left: 10px;
-          }
-        }
-        &.owl-prev{
-          svg{
-            transform: rotate(-180deg);
-            margin-right: 10px;            
-          }
-        }        
-      }
-    }
-    .navy{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0px 300px 0px 90px;      
-      button{
-        display: flex;
-        align-items: center;
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 1;
-        color:$black;
-        outline: none;        
-        svg{
-          use{
-            fill:$green;
-          }
-        }
-        &.owl-next{
-          svg{
-            margin-left: 10px;
-          }
-        }
-        &.owl-prev{
-          svg{
-            transform: rotate(-180deg);
-            margin-right: 10px;            
-          }
-        }        
-      }      
-    }
-    .owl-dots{
-      max-width: 1345px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 0px 300px 0px 90px;
-      .counter{
-        width: 100%;
-        order: 1;
-        color: $green;
-        text-align: center;
-      }
-      button{
-        height: 7px;
-        width: 2px;
-        background: $light-grey;
-        margin:0 2px;
-        transform: skewX(-35deg);
-        outline: none;
-        order: 2;
-        &.active{
-          background: $green;
-        }
-      }
-    }
-
   }  
+}
+
+@include respond(xl-screen){
+    .owl-carousel{
+      &.services_slider{
+        .item{
+          .text{
+            padding: 3rem;
+          }
+          .collage{
+            padding: 3rem;
+            width: fit-content;
+          }          
+        }
+      }
+    }
+}
+
+@include respond(m-screen){
+    .owl-carousel{
+      &.services_slider{
+        .item{
+          .text{
+            h2{
+              font-size: 3rem;
+            }
+            p{
+              font-size: 3rem;
+            }
+            
+          }
+          .collage{
+            padding:3rem  0.8rem;
+          }          
+        }
+      }
+    }
+}
+
+@include respond(s-screen){
+    .owl-carousel{
+      &.services_slider{
+        .item{
+          .text{
+            h2{
+              font-size: 2.5rem;
+            }
+            p{
+              font-size: 2.5rem;
+            }
+            padding: 0.8rem;
+          }
+          .collage{
+            padding:3rem  0.8rem;
+          }          
+        }
+      }
+    }
 }
 
 @include respond(es-screen){
@@ -310,15 +280,15 @@
     &.project_slider{
       .project_item-wrapper{
         .project_item{
-          max-width: 60px;
+          max-width: 6rem;
           text-align: center;
-          margin: 0 5px;
+          margin: 0 0.5rem;
           .icon{
-            width: 54px;
-            height: 54px;
+            width: 5.4rem;
+            height: 5.4rem;
           }
           span{
-            font-size: 11px;
+            font-size: 1.1rem;
           }
         } 
       } 
@@ -327,6 +297,18 @@
       margin-top: 0;
       .owl-item.active{
         transform: none;
+      }
+    }
+    &.services_slider{
+      .item{
+        .text{
+          h2{
+            font-size: 1.4rem;
+          }
+          p{
+            font-size: 1.4rem;
+          }
+        }        
       }
     }
   }
