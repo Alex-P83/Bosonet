@@ -140,18 +140,6 @@
     }
 }
 
-[dir="rtl"]{
-    .main_screen{
-        &.services_page{
-            .title{
-                h1{
-                    text-align: right;
-                }
-            }
-        }
-    }
-}
-
 @include respond(xl-screen){
     .services{
         .navy{
@@ -267,4 +255,16 @@
             }
         }        
     }  
+}
+
+[dir="rtl"]{
+    .main_screen{
+        &.services_page{
+            .title{
+                h1{
+                    text-align: right;
+                }
+            }
+        }
+    }
 }

@@ -1,4 +1,7 @@
 .owl-carousel {
+  .owl-stage-outer{
+    // direction: ltr;
+  }
   &.testimonials_slider {
     direction: ltr;
     text-align: center;
@@ -311,5 +314,19 @@
         }        
       }
     }
+  }
+}
+
+[dir='rtl']{
+  .owl-carousel{
+    &.services_slider{
+      .item{
+        .collage{
+          padding-left: 0;
+          padding-right: 9rem;
+          float:right; 
+        }
+      } 
+    } 
   }
 }

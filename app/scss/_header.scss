@@ -109,14 +109,6 @@ header {
   }
 }
 
-html[dir="rtl"] {
-  header {
-    .logo {
-      float: right;
-    }
-  }
-}
-
 @include respond(m-screen) {
   header {
     .menu {
@@ -188,6 +180,36 @@ html[dir="rtl"] {
           padding: 5px 0;
         }
       }
+    }
+  }
+}
+
+[dir="rtl"] {
+  header {
+    .logo {
+      float: right;
+    }
+    .menu{
+      li {
+        a {
+          &:before{
+              right: 0;
+              left: 100%;
+              -webkit-transition-property: left;
+              transition-property: left;        
+          }
+          &:hover:before, &:focus:before, &:active:before {
+              left: 0;
+            }                
+        }
+        &.active {
+          a {
+              &::before{
+                 left:0; 
+              }
+          }
+        }
+      }      
     }
   }
 }

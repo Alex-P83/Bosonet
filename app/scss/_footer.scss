@@ -43,19 +43,24 @@ footer{
                 list-style: none;
                 li{
                     position: relative;
-                    padding: 0 8px;
+                    // padding: 0 8px;
                     a{
-                        font-size: 14px;
+                        font-size: 1.4rem;
                         font-weight: 600;
                         color:$white;
                     }
                     &:after{
-                        position: absolute;
-                        top:50%;
-                        transform: translateY(-46%);
-                        right:-4px;
+                        position: relative;
+                        // position: absolute;
+                        // top:50%;
+                        // transform: translateY(-46%);
+                        // right:-4px;
                         content:'/';
+                        font-family: "Muli", sans-serif;
+                        font-size: 1.4rem;
                         color:$white;
+                        padding: 0 0.8rem;
+                        // bottom: -2px;
                     }
                     &:last-child{
                         &:after{
@@ -82,6 +87,7 @@ footer{
         }
     }
 }
+
 @include respond(es-screen){
     footer{
         .technology{

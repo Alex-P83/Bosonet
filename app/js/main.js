@@ -55,7 +55,7 @@ $(function(){
     servicesSlider.owlCarousel({
         onInitialized: onIn,
         onChanged: onIn,
-        loop:false,
+        loop:true,
         margin:0,
         nav:true,
         dots:true,
@@ -68,14 +68,42 @@ $(function(){
         navContainer:'.navy',
         navText : ['<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg> פיתוח מערכות ניהול מותאמות','ניהול ופיתוח פרויקטים <svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>']
     });
- 
+    function getActiveSlideIndex(event) {
+      if (!event.item) {
+          return null;
+      }
+  
+      var count  = event.item.count,
+          offset = Math.floor((count + 1) / 2),
+          index  = event.item.index;
+  
+      if (index > 0) {
+          index -= offset;
+      }
+  
+      if (index >= count) {
+          index -= count;
+      }
+  
+      if (index < 0) {
+          index = count - 1;
+      }
+  
+      if (count === 2) {
+          index = index === 0 ? 1 : 0;
+      }
+  
+      return index;
+  }
     function onIn(event){
-        const currentItem = event.item.index;
         const count = event.item.count;
+        const currentItem = getActiveSlideIndex(event);
         const text = `${currentItem < 9 ? 0 : ''}${currentItem + 1}/${count}`;
         // const textDiv = $('.owl-dots');
         $('.counter_block .page').text(text);
     }
+
+    
 
 // Project sample 
 
@@ -353,7 +381,7 @@ anime.timeline({loop: true})
     easing: "easeInExpo",
     duration: 1100,
     delay: (el, i) => 100 + 30 * i
-  });  
+  });
 }
 
 //Upload files
@@ -378,7 +406,7 @@ uploadInput.on('change', function(){
 //Change language hebrew
 
 const langLink = $('.language a');
-  const $body = $('body');
+  const $html = $('html');
 
   langLink.on('click', function(e){
       e.preventDefault();
@@ -386,8 +414,8 @@ const langLink = $('.language a');
       const isHebrew = $(this).hasClass('hebrew');
 
       if (isHebrew) {
-        $body.attr('dir', 'rtl');
+        $html.attr('dir', 'rtl');
       } else {
-        $body.removeAttr('dir');
+        $html.removeAttr('dir');
       }
 });
