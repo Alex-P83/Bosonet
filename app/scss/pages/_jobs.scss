@@ -217,3 +217,17 @@
     }
   }
 }
+
+[dir="rtl"]{
+  .jobs_wrapper{
+    .request_block{
+      a{
+        svg{
+          margin-left: 0;
+          margin-right: 0.7rem;
+          transform: rotateY(180deg);
+        }
+      } 
+    } 
+  } 
+}

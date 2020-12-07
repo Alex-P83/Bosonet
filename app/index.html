@@ -43,19 +43,19 @@
     </div>
   </header>
   <!-- Main screen  -->
-  <section class="main_screen">
+  <section class="main_screen main_page">
     <div class="container">
       <div class="title">
         <h1 class="ml12">We are your Software experts</h1>
       </div>
-      <div class="row">
+      <div class="row" data-aos="fade">
         <div class="col-12 col-xl-4">
-          <div class="text" data-aos="fade" data-aos-delay="1000">
+          <div class="text" id="animate_subtitle">
             <p>We specializes in software development, application development, website building and cloud systems customized to the customer’s needs.</p>
           </div>          
         </div>
         <div class="col-12 col-xl-8">
-          <video width="100%" height="100%"  loop preload="auto" autoplay muted="muted" playsinline class="lazy" data-src="video/Home_Preview.mp4"  data-aos="fade" data-aos-delay="2000">
+          <video width="100%" height="100%"  loop preload="auto" autoplay muted="muted" playsinline class="lazy" data-src="video/Home_Preview.mp4" id="main_video">
             <source data-src="video/Home_Preview.mp4" type="video/mp4">  
           </video>           
         </div>
@@ -565,7 +565,6 @@
       // Scrollbar custom 
       new SimpleBar($('#scrollBarElement')[0]);
       initAnime();
-      AOS.init();
   </script>
 </body>
 </html>

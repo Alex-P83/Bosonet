@@ -154,3 +154,23 @@
         }
     }    
 }
+
+[dir="rtl"]{
+    .main_screen{
+      &.company_page{
+        .container{
+          .wrapper{
+            .number{
+              span{
+                 img{
+                     transform: none;
+                     margin-right: 1rem;
+                     margin-left: 0; 
+                 }  
+              }   
+            }   
+          }    
+        }   
+      } 
+    }
+}

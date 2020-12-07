@@ -12,7 +12,8 @@
     .text{
         max-width: 60rem;
         margin-bottom: 0;
-        margin-top: 5rem;        
+        margin-top: 5rem;
+        opacity: 0;        
         p{
             font-size: 3.8rem;
             line-height: 1.3;
@@ -24,6 +25,13 @@
         width: 115%;
         position: relative;
         z-index: 2;
+        &#main_video{
+            opacity: 0;
+            display: none;
+        }
+    }
+    &.main_page{
+        min-height: 103rem;
     }
 }
 .services_01{
@@ -282,7 +290,7 @@
         }
         margin-bottom: 12rem;
     }
-    &_back{
+    .who_we_work_back{
         position:inherit;
         padding-left: 14rem;
         padding-right: 14rem;
@@ -472,7 +480,7 @@
 @include respond(2xl-screen){
     .services_02{
       .inner_block{
-          padding: 0;
+          padding: 0 3rem;
       }  
     }
     .selected_projects{
@@ -508,7 +516,12 @@
               font-size: 2.8rem;
           }
       }  
-    }        
+    }
+    .services_02{
+        .inner_block{
+            padding: 0;
+        }  
+      }        
 }
 
 @include respond(lg-screen){
@@ -540,7 +553,7 @@
         }
     }
     .who_we_work{
-        &_back{
+        .who_we_work_back{
             padding:0 1.5rem;
         }
     } 
@@ -645,6 +658,9 @@
                     display: none;
                 }
             }
+            .inner_block{
+                padding: 0 3rem;
+            }
         }
         #scrollBarElement{
             padding: 0;
@@ -661,9 +677,6 @@
         }
         .text{
             column-count: 1;
-        }
-        &_back{
-            padding:0 1.5rem;
         }
         .logo_wrapper{
             position: relative;
@@ -817,6 +830,7 @@
             .wrap_description{
                 .description{
                     padding-left: 1rem;
+                    margin-left: 1rem;
                 }
             }   
           } 
@@ -897,18 +911,15 @@
     }
     .services_02{
         .title{
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 7.5rem;
             h6{
-                position: relative;
-                margin: 0;
-                padding-right: 3rem;
+                padding-left: 3rem;
+                padding-right: 0;
                 &:after{
                     position: absolute;
                     top:50%;
-                    transform: translate(61%, -50%);
-                    right:0;
+                    transform: translate(-61%, -50%) rotateY(180deg);
+                    left:0;
+                    right:auto;
                     content:url('../img/figure.svg');
                     font-size: 0;
                 }
@@ -924,8 +935,10 @@
                 border-radius: 50%;
                 background: $green;
                 cursor: pointer;
-                margin-right: -5.3rem;
+                margin-left: -5.3rem;
+                margin-right: 0;
                 flex-shrink: 0;
+                transform: rotateY(180deg);
                 svg{
                     use{
                         fill:$black;
@@ -1008,26 +1021,12 @@
             }
         }
         .inner_block{
-            padding:0 14.5rem 0 21rem;
-            .text{
-                p{
-                    color:$black;
-                    margin-bottom: 3rem;
-                }
-            }
+            padding: 0 21rem  0 14.5rem;
             a{
-                display: flex;
-                align-items: center;
-                font-size: 1.8rem;
-                font-weight: 600;
-                color:$black;
-                text-decoration: none;
-                margin-top: 9rem;
                 svg{
-                    margin-right: 1rem;
-                    use{
-                        fill:$black;
-                    }
+                    margin-left: 1rem;
+                    margin-right: 0;
+                    transform: rotateY(180deg);
                 }
                 img{
                     margin-right: 1rem;
@@ -1035,12 +1034,208 @@
             }
         }
     }
+    .who_we_work{
+        position: relative;
+        overflow: hidden;
+        padding-top: 15.5rem;
+        padding-bottom: 6rem;
+        .backgound_container{
+            position: absolute;
+            top:0;
+            left:50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            content:'';
+            .row{
+                height: 100%;
+            }
+            .backgound_block{
+                position: relative;
+                background: $dark-blue;
+                &:after{
+                    position: absolute;
+                    top:0;
+                    bottom:0;
+                    right:0;
+                    left: -100rem;
+                    content:'';
+                    background: $dark-blue;
+                }
+            }
+        }
+        .title{
+            position: relative;
+            z-index: 2;
+            h6{
+                color:$white;
+            }
+            margin-bottom: 12rem;
+        }
+        .who_we_work_back{
+            position:inherit;
+            padding-left: 14rem;
+            padding-right: 14rem;
+        }    
+        .text{
+            position: relative;
+            column-count: 2;
+            z-index: 1;
+            p{
+                font-weight: 400;
+                color: $white;
+                line-height: 1.6;
+            }
+        }
+        .logo_wrapper{
+            video{
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+            }
+        }
+        .logotypes{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0.5rem 0 9.5rem;
+            img{
+                margin:1.5rem;
+                &:last-child{
+                    margin-right: auto;
+                }
+            }
+        } 
+    }
+    .selected_projects{
+        position: relative;
+        padding-top: 16.5rem;
+        padding-bottom: 8.5rem;
+        background: $white;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr;
+        .title{
+            h6{
+                color:$black;
+            }
+            margin-bottom: 4rem;
+        }
+        .project_list{
+            padding: 0;
+            margin-left: 0;
+            margin-right: 24rem;
+            li{
+                list-style: none;
+                list-style-position: inside;
+                margin-bottom: 2rem;
+                .project_title{
+                    h2{
+                        display: inline-flex;
+                        align-items: center;
+                        margin: 0;
+                        font-weight: 400;
+                        cursor: pointer;
+                        i{
+                            display: flex;
+                            align-items: center;
+                            font-style: normal;
+                            font-size: 2rem;
+                            font-weight: 300;
+                            margin-right: 0;
+                            margin-left: 1.5rem;                    
+                        }
+                        span{
+                            display: inline-block;
+                        }                                         
+                    }
+                }
+                .wrap_description{
+                    transition: .5s;
+                    opacity: 0;
+                    height: 0;
+                    overflow: hidden;
+                }
+                .description{
+                    padding-left: 0;
+                    padding-right: 4rem;
+                    border-left: none;
+                    border-right: 3px solid $green;
+                    margin-top: 2rem;                
+                    p{
+                        font-size: 1.4rem;
+                        font-weight: 400;
+                        margin: 0;
+                    }
+                }
+                &.active{
+                    .project_title{
+                        h2{
+                            span{
+                                position: relative;
+                                padding-left: 1rem;
+                                &:after{
+                                    position: absolute;
+                                    top:50%;
+                                    transform: translateY(-50%);
+                                    left:0;
+                                    width: 0.3rem;
+                                    height: 1.5rem;
+                                    background: $green;
+                                    content: '';
+                                }
+                            }
+                        }
+                    }
+                    .wrap_description{
+                        opacity: 1;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        .project_text_block{
+            grid-column-start: 1; 
+            grid-column-end: 1; 
+            grid-row-start: 1; 
+            grid-row-end: 1; 
+        }
+        .project_slider_block{
+            grid-column-start: 1; 
+            grid-column-end: 1; 
+            grid-row-start: 1; 
+            grid-row-end: 1; 
+        }      
+    }    
+    @include respond(2xl-screen){
+        .services_02{
+            .inner_block{
+                padding: 0 3rem;
+            }  
+        }
+        .selected_projects{
+          .project_list{
+              margin-right: 0;
+          }  
+        } 
+    }
     @include respond(xl-screen){
         .services_01{
             .services_list{
                 margin-right: 8rem;
             }
-        }        
+        }
+        .services_02{
+            .inner_block{
+                padding: 0;
+            }  
+          }        
     }
     @include respond(lg-screen){
         .services_01{
@@ -1050,12 +1245,314 @@
                 }
             }            
         }
+        .services_02{
+            .team_tiles{
+                grid-auto-rows: 20rem;
+            }
+        }
+        .who_we_work{
+            .who_we_work_back{
+                padding:0 1.5rem;
+            }
+        }
+        .selected_projects{
+            grid-template-columns: 100%;
+            grid-template-rows: 2fr;
+            .project_text_block{
+                .project_list{
+                    margin-bottom: 5rem;
+                    .owl-thumb-item{
+                        display: none;
+                        .description{
+                            opacity: 1;
+                            height: auto;
+                        }
+                        &.active{
+                            display: block;
+                        }
+                    }
+                }            
+            }
+            .project_slider_block{
+                grid-column-start: 1; 
+                grid-column-end: 1; 
+                grid-row-start: 2; 
+                grid-row-end: 2;
+                max-width: 96rem!important; 
+                .project_slider{
+                    margin-right: 0;
+                  .owl-stage{
+                      left:0;
+                  }  
+                } 
+            }         
+        }                         
     }
     @include respond(m-screen){
         .services_01{       
             .services_list{
                 margin-right: 3rem;
             }  
-        }         
+        }
+        .services_02{
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 0;
+            height: auto;
+            background: $green;
+            .container{
+                &.team_block{
+                    max-width: 100%;
+                    order: 2;
+                    padding: 0;
+                    background: $white;                
+                }
+                &.float_block{
+                    position: relative;
+                    order: 1;
+                    top: auto;
+                    left: auto;
+                    transform: none;
+                }
+            }
+            .team_tiles{
+                overflow: none;
+                display: block;
+                padding: 1rem 0;
+                grid-auto-rows: auto;
+                .owl-stage {
+                    right: -5rem;
+                  }
+                .photo{
+                    height: 35rem;
+                }
+            }
+            &_back{
+                padding: 5rem 1.5rem;
+                .title{
+                    .arrow{
+                        display: none;
+                    }
+                }
+            }
+            #scrollBarElement{
+                padding: 0;
+            }
+        }
+        .who_we_work{
+            padding-top: 10rem;
+            background: $dark-blue;
+            .container{
+                max-width: 100%;
+            }
+            .title{
+                margin-bottom: 3rem;
+            }
+            .text{
+                column-count: 1;
+            }
+            .logo_wrapper{
+                position: relative;
+                margin:5rem -1.5rem;
+                video{
+                    position: relative;
+                    display: block;
+                    z-index: 1;
+                }
+                .logotypes{
+                    position: absolute;
+                    bottom:0;
+                    left:0;
+                    width: 100%;
+                    margin:1.5rem 0;
+                    font-size: 0;
+                    .owl-stage{
+                        position: relative;
+                        .owl-item{
+                            height: 5rem;
+                            img{
+                                height: 100%;
+                                margin:0;
+                            }
+                        }
+                        &:before{
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            width: 1px;
+                            height: 100%;
+                            vertical-align: middle;
+                            content: '';
+                        }                
+                    }
+                }            
+            }
+    
+        }                         
     }
+    @include respond(es-screen){
+        .main_screen{
+            .title{
+                padding: 0 1.5rem;
+                h1{
+                    font-size: 2.8rem;
+                }            
+            }
+            .text{
+                padding: 0 1.5rem;
+                margin: 0;
+                p{
+                    font-size: 1.8rem;
+                }
+            }
+            video{
+                width: calc(100% + 3rem);
+                margin: 0 -1.5rem;
+            }
+        }
+        .services_01{
+            .title{
+                h6{
+                    font-size: 2rem;
+                    span{
+                        font-size: 1rem;
+                    }
+                }
+            }         
+          .services_list{
+              margin-right: 0;
+              padding: 0 1.5rem;
+              li{
+                  font-size: 1.6rem;
+                  span{
+                      font-size: 1rem;
+                  }
+              }
+          }  
+        }
+        .services_02{
+            .float_block{
+                .services_02_back{
+                    padding: 1.5rem 1.5rem 2rem;
+                    .title{
+                        margin-bottom: 1.5rem;
+                        h6{
+                            &:after{
+                                display: none;
+                            }
+                        }
+                    }
+                    .inner_block{
+                        padding: 0 1.5rem;
+                        .text{
+                            p{
+                                margin-bottom: 1rem;
+                            }
+                        }
+                        a{
+                            svg{
+                                width: 1.6rem;
+                            }
+                            margin-top: 1.5rem;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+            .team_tiles{
+                .owl-stage {
+                    right: -3rem;
+                  }
+                .photo{
+                    height: 15rem;
+                }
+            }
+        }
+        .selected_projects{
+            padding: 3rem 0;
+            .project_list{
+                padding: 0 1.5rem;
+              li{
+                .project_title{
+                   h2{
+                       font-size: 1.6rem;
+                       i{
+                           font-size: 1rem;
+                           font-weight: 300;
+                       }
+                       span{
+                           padding: 0!important;
+                           &:after{
+                               display: none;
+                           }
+                       }
+                   }   
+                }
+                .wrap_description{
+                    .description{
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                        margin-right: 1rem;
+                    }
+                }   
+              } 
+            } 
+        }
+        .who_we_work{
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            .text{
+                padding: 0 1.5rem;
+            }
+            .logo_wrapper{
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+        }
+        .talk_to_us{
+            padding: 3rem 0 0;
+            overflow: hidden;
+            .form{
+                position: relative;
+                padding: 2.5rem;
+                margin-bottom: 2rem;
+                &:after{
+                    position: absolute;
+                    top:2rem;
+                    left:-10rem;
+                    right:-10rem;
+                    bottom:-10rem;
+                    content:'';
+                    background: $dark-blue;
+                    z-index: -1;
+                }
+                h2{
+                    font-size: 1.6rem;
+                    margin-bottom: 2rem;
+                }
+                form{
+                    background: $white;
+                    position: relative;
+                    input{
+                        font-size: 1.4rem;
+                    }
+                    button{
+                        height: 4.9rem;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+        .who_we_work{
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            .text{
+                padding: 0 1.5rem;
+            }
+            .logo_wrapper{
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+        }     
+    }    
 }

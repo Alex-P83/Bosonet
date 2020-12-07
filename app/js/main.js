@@ -99,7 +99,6 @@ $(function(){
         const count = event.item.count;
         const currentItem = getActiveSlideIndex(event);
         const text = `${currentItem < 9 ? 0 : ''}${currentItem + 1}/${count}`;
-        // const textDiv = $('.owl-dots');
         $('.counter_block .page').text(text);
     }
 
@@ -110,16 +109,7 @@ $(function(){
     const projectSampleDesktop = $('.project_sample_desktop_slider');
     const projectSampleMobile = $('.project_sample_mobile_slider');
 
-    // function triggerSlider(event, slider){
-    //   if(event.item.index < 0){
-    //     return;
-    //   }
-
-    //   slider.trigger('to.owl.carousel', event.item.index);
-    // }
-
     projectSampleMobile.owlCarousel({
-        // onChanged: (e) => { triggerSlider(e, projectSampleDesktop) },
         loop:true,
         margin:100,
         nav:false,
@@ -142,8 +132,6 @@ $(function(){
     });
 
     projectSampleDesktop.owlCarousel({
-        //onInitialized: (e) => { triggerSlider(e, projectSampleMobile) },
-       // onChanged: (e) => { triggerSlider(e, projectSampleMobile) },
         stagePadding: 465,
         loop:true,
         nav:false,
@@ -365,24 +353,48 @@ function initAnime(){
 var textWrapper = document.querySelector('.ml12');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime.timeline({loop: true})
+
+
+const animation = anime.timeline({loop: false})
   .add({
     targets: '.ml12 .letter',
     translateX: [40,0],
     translateZ: 0,
     opacity: [0,1],
     easing: "easeOutExpo",
-    duration: 1200,
+    duration:500,
     delay: (el, i) => 500 + 30 * i
-  }).add({
-    targets: '.ml12 .letter',
-    translateX: [0,-30],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1100,
-    delay: (el, i) => 100 + 30 * i
-  });
+  })
+  .add({
+    targets:'#animate_subtitle',
+    opacity:[0,1],
+    easing: "easeOutSine",
+    duration: 500,
+  })
+  .add({
+    targets:'#main_video',
+    // opacity:[0,1],
+    opacity:'1',
+    begin: function() {
+      document.querySelector('#main_video').style.display = 'block';
+    },
+    easing: "easeOutSine",
+    duration: 500,    
+  })
+  // .add({
+  //   targets: '.ml12 .letter',
+  //   translateX: [0,-30],
+  //   opacity: [1,0],
+  //   easing: "easeInExpo",
+  //   duration: 1100,
+  //   delay: (el, i) => 100 + 30 * i
+  // });
+
+  AOS.init();
+  document.addEventListener('aos:out', animation.restart);
 }
+
+
 
 //Upload files
 

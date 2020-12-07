@@ -7,9 +7,9 @@
       outline: none;
       box-shadow: none;   
    &-primary{
-      background: $green;
+      background: $green!important;
       &:hover{
-         background: $green; 
+         background: darken($green, 10%)!important; 
       }
       &:active{
          background: $green!important; 
@@ -19,16 +19,16 @@
       }       
    }
    &-secondary{
-      background: $light-green;
+      background: $light-green!important;
       &:hover{
-         background: $light-green; 
+         background: $light-green!important; 
       }
       &:active{
          background: $light-green!important;
          color:$black!important; 
       }
       &:focus{
-         background: $light-green; 
+         background: $light-green!important; 
          box-shadow: none!important;
       } 
    }    
