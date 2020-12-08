@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- <base href="/"> -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -48,7 +49,7 @@
       <div class="title">
         <h1 class="ml12">We are your Software experts</h1>
       </div>
-      <div class="row" data-aos="fade">
+      <div class="row">
         <div class="col-12 col-xl-4">
           <div class="text" id="animate_subtitle">
             <p>We specializes in software development, application development, website building and cloud systems customized to the customer’s needs.</p>
@@ -70,10 +71,10 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-xl-8 services_01_back">
-          <div class="title" data-aos="fade">
+          <div class="title" data-aos="fade-right" data-aos-delay="100">
             <h6><span>01</span> Services</h6>
           </div>
-          <ul class="services_list">
+          <ul class="services_list" data-aos="fade-left" data-aos-delay="100">
             <li><span>01</span>Applications development</li>
             <li><span>02</span>Project management and development</li>
             <li><span>03</span>Development of custom management systems</li>
@@ -90,8 +91,9 @@
     </div>
   </section>
   <!-- 02 Services  -->
-  <section class="services_02">
-    <div class="container team_block" data-aos="fade">
+  <div class="wrapper_section">
+  <section class="services_02"  data-aos="fade" data-aos-offset="300">
+    <div class="container team_block">
       <div class="row">
         <div class="col-12 col-lg-9 offset-lg-3 col-xl-9 offset-xl-2 teams_wrapper">
           <div id="scrollBarElement">
@@ -111,10 +113,10 @@
               <div class="photo" data-aos="fade" data-aos-delay="50">
                 <img src="img/face_5.jpg" alt="team_member">
               </div>
-              <div class="photo" data-aos="fade">
+              <div class="photo">
                 <img src="img/face_6.jpg" alt="team_member">
               </div>
-              <div class="photo" data-aos="fade" data-aos-delay="50">
+              <div class="photo">
                 <img src="img/face_7.jpg" alt="team_member">
               </div>
               <div class="photo">
@@ -151,16 +153,17 @@
     </div>
     <div class="container float_block">
       <div class="row">
-        <div class="col-12 col-lg-6 services_02_back" data-aos="fade-left" data-aos-delay="200"  data-aos-anchor-placement="top-center" data-aos-once="true">
-          <div class="title" data-aos="fade">
-            <h6><span>02</span>Services</h6>
-            <div class="arrow">
+        <div class="col-12 col-lg-6 services_02_back">
+          <div class="title" >
+            <h6  data-aos="fade-left" data-aos-delay="100" ><span>02</span>Services</h6>
+            <img src="img/figure.svg" alt="figure" data-aos="fade-right" data-aos-delay="500" data-aos-anchor-placement="center-bottom">
+            <div class="arrow" data-aos="fade-right" data-aos-delay="500" data-aos-anchor-placement="center-bottom">
               <svg width="21" height="18">
                 <use xlink:href="img/icons.svg#arrow"></use> 
               </svg>
             </div>
           </div>
-          <div class="inner_block">
+          <div class="inner_block" data-aos="fade-left" data-aos-delay="500">
             <div class="text">
               <p>The bosonet application development team includes developers, programmers, graphic designers and interface people, 
               QA people and top-notch project managers. 
@@ -181,15 +184,16 @@
       </div>
     </div>
   </section>
+  </div>
   <!-- Who we work -->
   <section class="who_we_work">
     <div class="container">
-      <div class="title" data-aos="fade">
+      <div class="title" data-aos="fade-right">
         <h6><span>03</span>Who we work</h6>
       </div>
       <div class="row">
         <div class="col-12 offset-0 offset-lg-4 col-lg-8 who_we_work_back">
-          <div class="text">
+          <div class="text" data-aos="fade" data-aos-delay="100">
             <p>We maintain a clean and clear code that can be passed between different entities without the need for adjustments, 
             ongoing accompaniment, service and support for a</p>
             <p>We maintain a clean and clear code that can be passed between different entities without the need for adjustments, 
@@ -199,7 +203,7 @@
             <video width="100%" height="100%"  preload="auto" autoplay muted="muted" playsinline class="lazy" data-src="video/Scene_3.mp4">
               <source data-src="video/Scene_3.mp4" type="video/mp4">
             </video>           
-            <div class="logotypes owl-carousel owl-theme">
+            <div class="logotypes owl-carousel owl-theme" data-aos="fade" data-aos-delay="100">
               <img src="img/testimonials_logo1.svg" alt="logo">
               <img src="img/testimonials_logo2.svg" alt="logo">
               <img src="img/testimonials_logo3.svg" alt="logo">
@@ -253,12 +257,12 @@
   <!-- Selected projects  -->
   <section class="selected_projects">
     <div class="container project_text_block">
-      <div class="title" data-aos="fade">
+      <div class="title" data-aos="fade-right">
         <h6><span>04</span>Selected projects</h6>
       </div>
       <div class="row">
         <div class="col-12 col-xl-6">
-          <ul class="project_list owl-thumbs" data-slider-id="1">
+          <ul class="project_list owl-thumbs" data-slider-id="1" data-aos="fade-up">
             <li class="owl-thumb-item">
               <div class="project_title"> 
                 <h2><i>01</i><span>Software Development</span></h2>
@@ -327,7 +331,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid project_slider_block">
+    <div class="container-fluid project_slider_block" data-aos="fade-left">
       <div class="row">
         <div class="col-12 offset-0 col-xl-6 offset-xl-6">
           <div class="project_slider owl-carousel owl-theme" data-slider-id="1">
@@ -509,7 +513,7 @@
       <source data-src="video/Scene_4.mp4" type="video/mp4">
     </video>    
     <div class="container">
-      <div class="title" data-aos="fade">
+      <div class="title" data-aos="fade-right">
         <h6><span>05</span>Talk to us</h6>
       </div>
       <div class="form">
@@ -560,7 +564,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
   <script src="js/libs.min.js"></script>
   <script src="js/main.js"></script>
-  
+
   <script>
       // Scrollbar custom 
       new SimpleBar($('#scrollBarElement')[0]);

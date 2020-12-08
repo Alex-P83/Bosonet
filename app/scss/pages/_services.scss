@@ -138,15 +138,111 @@
             }            
         }
     }
+    &_content{
+        .text{
+            border-radius: 5rem;
+            background: $white;
+            padding: 4rem 30rem 4rem 9rem;
+            p{
+              font-size: 3.8rem;
+            }
+        }
+        .collage{
+            width: max-content;
+            padding-left: 9rem;
+        }
+        .arrows_counter_block{
+            display: flex;
+            padding: 4rem 30rem 4rem 9rem;
+            align-items: center;
+            justify-content: space-between;
+            .counter{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                order: 2;
+                padding: 0 1rem;
+                .pages{
+                    span{
+                        font-size: 2.4rem;
+                        color:$green;
+                        i{
+                            font-style: normal;
+                        }
+                    }
+                }
+                .dots{
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    li{
+                        list-style: none;
+                        display: flex;
+                        a{
+                            display: inline-block;
+                            height: 7px;
+                            width: 2px;
+                            background: $light-grey;
+                            margin:0 2px;
+                            transform: skewX(-35deg);
+                            outline: none;
+                            order: 2;
+                            padding: 0;
+                            border: none;
+                        }
+                        &.active{
+                            a{
+                              background: $green;  
+                            }
+                        }                        
+                    }
+                }
+            }
+            .pointer{
+                display: flex;
+                align-items: center;
+                font-size: 2.4rem;
+                color:$black;
+                text-decoration: none;
+                svg{
+                    use{
+                        fill:$green;
+                    }
+                }
+                &.prev{
+                    order:1;
+                    svg{
+                        transform: rotateY(180deg);
+                        margin-right: 1rem;
+                    }
+                }
+                &.next{
+                    order:3;
+                    svg{
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include respond(xl-screen){
     .services{
-        .navy{
-            padding: 0 3rem;
-        }
-        .counter_block{
-            padding: 0 3rem;
+        &_content{
+            .text{
+                padding: 3rem;
+            }
+            .collage{
+                padding: 3rem;
+                width: fit-content;
+            }
+            .arrows_counter_block{
+                padding:0 3rem;
+            }  
         }
     }
 }
@@ -175,16 +271,29 @@
         }
     }
     .services{
-        .wrap_nav{
-            .counter_block{
-                grid-column: auto;
-                grid-row: auto; 
-                margin-bottom: 2rem;               
-            } 
-            .navy{
-                grid-column: auto;
-                grid-row: auto;
-            }
+        &_content{
+            .text{
+                padding: 3rem 0;
+                h2{
+                  font-size: 3rem;
+                }
+                p{
+                  font-size: 3rem;
+                }
+                
+              }
+              .collage{
+                padding:3rem  0.8rem;
+                img{
+                    width: 100%;
+                }
+              }
+              .arrows_counter_block{
+                  padding: 3rem 0;
+                  .pointer{
+                      font-size: 1.6rem;
+                  }
+              }
         }
     }
 }
@@ -207,13 +316,19 @@
         }
     }
     .services{
-        .wrap_nav{
-            .counter_block{
-                padding: 0 0.8rem;
-            } 
-            .navy{
-                padding: 0 0.8rem;
-            }
+        &_content{
+            .text{
+                h2{
+                  font-size: 2.5rem;
+                }
+                p{
+                  font-size: 2.5rem;
+                }
+                padding: 0.8rem;
+              }
+              .collage{
+                padding:3rem  0.8rem;
+              }
         }
     }    
 }
@@ -247,13 +362,18 @@
         }
     }
     .services{
-        .wrap_nav{
-            .navy{
-                button{
-                    font-size: 1.4rem;
-                }
-            }
-        }        
+      &_content{
+          .text{
+              p{
+                  font-size: 2rem;
+              }
+          }
+          .arrows_counter_block{
+              .pointer{
+                  font-size: 1.1rem;
+              }
+          }
+      }
     }  
 }
 
@@ -264,6 +384,50 @@
                 h1{
                     text-align: right;
                 }
+            }
+        }
+    }
+    .services{
+        &_content{
+            .collage{
+                padding-left: 0;
+                padding-right: 30rem;
+            }
+            .arrows_counter_block{
+                .pointer{
+                    &.next{
+                        svg{
+                            transform: rotateY(180deg);
+                        }
+                    }
+                    &.prev{
+                        svg{
+                            transform: none;
+                        }
+                    }                    
+                }
+            }
+        }
+    }
+    @include respond(xl-screen){
+        .services{
+            &_content{
+                .collage{
+                    padding: 3rem;
+                    width: fit-content;
+                }                
+            }
+        }
+    }
+    @include respond(m-screen){
+        .services{
+            &_content{
+                .collage{
+                    padding:3rem  0.8rem;
+                    img{
+                        width: 100%;
+                    }
+                  }
             }
         }
     }

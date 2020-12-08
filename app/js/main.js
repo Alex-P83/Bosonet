@@ -112,9 +112,10 @@ $(function(){
     projectSampleMobile.owlCarousel({
         loop:true,
         margin:100,
-        nav:false,
+        nav:true,
         dots:false,
         items:3,
+        navText : ['<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg> פיתוח מערכות ניהול מותאמות','ניהול ופיתוח פרויקטים <svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>'],
         responsive:{
             0:{
                 items:1,
@@ -134,9 +135,10 @@ $(function(){
     projectSampleDesktop.owlCarousel({
         stagePadding: 465,
         loop:true,
-        nav:false,
+        nav:true,
         dots:false,
         items:1,
+        navText : ['<svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg> פיתוח מערכות ניהול מותאמות','ניהול ופיתוח פרויקטים <svg width="21" height="18"><use xlink:href="img/icons.svg#arrow"></use></svg>'],
         responsive:{
             0:{
                 items:1,
@@ -239,7 +241,8 @@ $(function(){
 
   $('.services_02 .arrow').on('click',function(){
     $('.inner_block').slideToggle();
-    $('.services_02_back').toggleClass('active');
+    $('.services_02_back, .services_02 .teams_wrapper').toggleClass('active');
+
   })
 
   // Hidden services text
@@ -353,8 +356,6 @@ function initAnime(){
 var textWrapper = document.querySelector('.ml12');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-
-
 const animation = anime.timeline({loop: false})
   .add({
     targets: '.ml12 .letter',
@@ -373,7 +374,6 @@ const animation = anime.timeline({loop: false})
   })
   .add({
     targets:'#main_video',
-    // opacity:[0,1],
     opacity:'1',
     begin: function() {
       document.querySelector('#main_video').style.display = 'block';
@@ -381,14 +381,6 @@ const animation = anime.timeline({loop: false})
     easing: "easeOutSine",
     duration: 500,    
   })
-  // .add({
-  //   targets: '.ml12 .letter',
-  //   translateX: [0,-30],
-  //   opacity: [1,0],
-  //   easing: "easeInExpo",
-  //   duration: 1100,
-  //   delay: (el, i) => 100 + 30 * i
-  // });
 
   AOS.init();
   document.addEventListener('aos:out', animation.restart);
